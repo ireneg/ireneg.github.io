@@ -47,5 +47,10 @@ Traceback (most recent call last):
   File "csamtools.pyx", line 601, in csamtools.Samfile._open (pysam/csamtools.c:6290)
 ValueError: file does not have valid header (mode='rb') - is it SAM/BAM format?
 ```
-
 Last I checked everything had been indexed and formatted correctly, and I did in fact manage to get this darned thing to run once with a different test data set, but something must've changed in the interim. 
+
+**Update something seems to have been wrong with the first file I tried; I tried a different one and the following command worked no problem, at least to the point of loading the reads:**
+
+```
+python call_binding.py --task learn --protocol ATAC_seq --model msCentipede --mintol 1e-5  /mnt/gluster/data/internal_supp/atac_seq/reference/centipede/scanMotif/tester.bed.gz /mnt/gluster/home/ireneg/atac_seq/centipede/mapped_filtered/H19101.merged.nochrM.rmdup.filter.TAG_RG_FC2.LIB2.bam
+```
