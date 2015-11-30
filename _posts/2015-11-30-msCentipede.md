@@ -22,3 +22,5 @@ ERROR: Failed to estimate binding for M01123 in chimps with error code 1
 2. The sixth column in the bed file - the PWM id - also causes msCentipede to fail. Have to reprocess all the files to remove that column - should only do it before gzipping the final final bed that only msCentipede will see. 
 
 3. Aparently github markdown has a different code block code? Srsly? ugh. 
+
+4. Sorry, rather than ugh I meant :unamused:
