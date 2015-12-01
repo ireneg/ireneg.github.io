@@ -12,3 +12,5 @@ msCentipede ran overnight, and have now called binding on a couple of PWMs. Some
     * maybe thin the chimps out so there's the same number of reads involved? the number of bound sites is the same, so either the data quality is worse or...
 
 3. now looking for scripts to plot the results and check the footprint shape. 
+
+tangent: why do neither this post nor the one before it render correctly but the first post i made does?
