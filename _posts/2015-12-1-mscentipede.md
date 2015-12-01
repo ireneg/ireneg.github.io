@@ -1,3 +1,8 @@
+---
+layout: post
+title: msCentipede first run
+---
+
 msCentipede ran overnight, and have now called binding on a couple of PWMs. Some notes:
 
 1. output is gzipped. I somehow missed that/it's not documented, so I will have to change file names in script.
