@@ -9,10 +9,11 @@ msCentipede ran overnight, and have now called binding on a couple of PWMs. Some
 
 2. chimps are far slower than humans - probably due to having more data. After 16 hours running not a single chimp pwm is done and none of the log likelihoods appears ready to converge. There's a lot of PWMs out there, so this might be a big problem...
     
-  *maybe thin the chimps out so there's the same number of reads involved? the number of bound sites is the same, so either the data quality is worse or...
+  - maybe thin the chimps out so there's the same number of reads involved? the number of bound sites is the same, so either the data quality is worse or...
+  - **update: the only PWM finished, CTCF, took six hours longer in chimp than human. 13 hours in human, 19 in chimp, ~50% increase in time. will keep checking.**
 
 3. now looking for scripts to plot the results and check the footprint shape. 
 
-tangent: why do neither this post nor the one before it render correctly but the first post i made does?
+tangent: why do neither this post nor the one before it render correctly but the first post i made does? **update: colon in YAML breaks things.**
 
 tangent 2: formatting is a mess.
