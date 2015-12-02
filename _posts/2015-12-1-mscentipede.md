@@ -18,10 +18,6 @@ msCentipede ran overnight, and have now called binding on a couple of PWMs. Some
   - this did highlight how terrible the cluster set up is wrt python. msCentipede is currently running (after Anil) on python 2.6, but some of the libraries it needs are missing unless I add what appears to be a bunch of python 2.7 paths to PYTHONPATH.**
   - this also did highlight how much i need to learn python.  
 
-5. still having problems mounting cluster and examining output **update RESOLVED. port 22 incoming is indeed blocked, but I can tunnel to the cluster on port 20400, like I used for mounting, and then use scp from my desktop to local host with the same effect as rsync. behold: ** 
-
-    ssh pps-gateway.uchicago.edu -l ireneg -Nf -L 20400:homemount:22
-    sshfs -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 20400    ireneg@localhost: ~/clusterhome/
-    scp -oPort=20400 ireneg@localhost:~/atac_seq/centipede/output/*pdf ~/Desktop/cluster_sync
+5. still having problems mounting cluster and examining output **update RESOLVED. port 22 incoming is indeed blocked, but I can tunnel to the cluster on port 20400, like I used for mounting, and then use scp from my desktop to local host with the same effect as rsync. ** 
 
 6. was also having massive problems plotting the resulting footprint profile to file using Anil's `plot_accessibility_profile.py` script. It took me a long time to decode it, but the file names are hardcoded in there and I had to play with the python parser to get it to let me use my own and the such. I succeeded, after much much trial and error, only to discover that the plotting script opens an X session despite simply writing all output to pdf, and Yosemite does not play well with that. Had to download install xquartz on yosemite. 
