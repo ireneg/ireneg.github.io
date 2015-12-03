@@ -21,6 +21,8 @@ M04539 |10484  | -          | -      | -      | -          | -          | finish
 M04735 |927059 | finish     | -      | -      | overflow 1 | -          | finish
 M05589 |953    | finish     | finish | finish | overflow 4 | overflow 5 | finish
 
+(this is all bullshit, btw)
+
 **Chimp**
 
 PWM    | | Sites | | 1000       | 5000   | 10000      | 15000      | 20000      | default
