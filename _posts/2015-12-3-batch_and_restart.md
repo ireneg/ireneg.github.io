@@ -12,25 +12,25 @@ I set up a bunch of jobs to test the --batch and --restarts flags, testing from 
 
 **Human**
 
-PWM | Sites | 1000 | 5000 | 10000 | 15000 | 20000 | default
-----|-------|------|------|-------|-------|-------|--------
-M01123 | 308652 | overflow 1 | | | | | overflow 1
-M03895 | 17666 | | | | | | finish
-M04459 | 128991 | | | | | | finish
-M04539 | 10484 | | | | | | finish
-M04735 | 927059 | finish | | | overflow 1 | | finish
-M05589 | 953 | finish | finish | finish | overflow 4 | overflow 5 | finish
+| PWM | Sites | 1000 | 5000 | 10000 | 15000 | 20000 | default
+| ----|-------|------|------|-------|-------|-------|--------
+| M01123 | 308652 | overflow 1 | | | | | overflow 1
+| M03895 | 17666 | | | | | | finish
+| M04459 | 128991 | | | | | | finish
+| M04539 | 10484 | | | | | | finish
+| M04735 | 927059 | finish | | | overflow 1 | | finish
+| M05589 | 953 | finish | finish | finish | overflow 4 | overflow 5 | finish
 
 **Chimp**
 
-PWM | Sites | 1000 | 5000 | 10000 | 15000 | 20000 | default
-----|-------|------|------|-------|-------|-------|--------
-M01123 | 308652 | overflow 5 | | | | overflow 1 | finish
-M03895 | 17666 | overflow 2 | | overflow 1 | | | finish
-M04459 | 128991 | | | | | | finish
-M04539 | 10484 | | | | | | finish
-M04735 | 927059 | overflow 2 | | | overflow 1 | | finish
-M05589 | 953 | overflow 1 | finish | finish | finish | finish | finish
+| PWM | Sites | 1000 | 5000 | 10000 | 15000 | 20000 | default| 
+| ----|-------|------|------|-------|-------|-------|--------| 
+| M01123 | 308652 | overflow 5 | | | | overflow 1 | finish| 
+| M03895 | 17666 | overflow 2 | | overflow 1 | | | finish| 
+| M04459 | 128991 | | | | | | finish| 
+| M04539 | 10484 | | | | | | finish| 
+| M04735 | 927059 | overflow 2 | | | overflow 1 | | finish| 
+| M05589 | 953 | overflow 1 | finish | finish | finish | finish | finish | 
 
 Tolerance before the restart was set to the default value, < 1e-6. The default run above was set to 1e-5 instead. 
 
