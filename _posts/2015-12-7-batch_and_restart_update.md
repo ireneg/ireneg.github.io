@@ -8,9 +8,9 @@ An update on the output, after five days of running:
 
 60 jobs total, of which:
 
-* finished
-* overflow error
-* domain name error
+* 13 finished
+* 14 overflow error
+* 1 domain name error
 * 32 still running
 
 **Human**
