@@ -1,6 +1,7 @@
 ---
 layout: post
 title: msCentipede first run
+tags: mscentipede
 ---
 
 msCentipede ran overnight, and have now called binding on a couple of PWMs. Some notes:

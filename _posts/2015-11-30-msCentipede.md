@@ -1,6 +1,7 @@
 ---
 layout: post
 title: msCentipede notes 15.30.11
+tags: mscentipede
 ---
 
 1. msCentipede apparently needs to be run locally from /bin/? Was having problems on Fri queueing it all up outside the directory, failing to find the right modules:

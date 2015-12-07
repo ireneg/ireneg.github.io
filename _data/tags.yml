@@ -1,4 +1,8 @@
 - slug: atac-seq
-  name: atac-seq
-- slug: msCentipede
+  name: ATAC-seq
+- slug: mscentipede
   name: msCentipede
+- slug: to-do
+  name: things to do
+- slug: writing
+  name: writing
