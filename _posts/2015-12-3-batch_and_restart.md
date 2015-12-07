@@ -1,6 +1,6 @@
 ---
 title: testing --batch and --restart
-tags: mscentipede, atac-seq
+tags: [mscentipede, atac-seq]
 layout: post
 ---
 
