@@ -7,6 +7,7 @@ tags: india
 Starting again with India. Took the mastersheet of individuals and filtered down to the following set of individuals, after pruning all known relatives and duplicates according to the relevant columns:
 
 Continents:
+
 * Africa
 * Caucaus
 * Central Asia
@@ -16,6 +17,7 @@ Continents:
 * Southern Asia
 
 Publications:
+
 * Hapmap 3 Gujaratis (their own analysis group, surely)
 * Li et al 2008
 * Metspalu et al 2011
