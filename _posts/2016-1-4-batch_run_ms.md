@@ -4,7 +4,7 @@ layout: post
 tags: mscentipede
 ---
 
-Over the weekend I launched msCentipede on all 1261 human PWMs. With 5gb of RAM it's taken over 48 hours to do one model run (we're doing 10 to get a good fit; Anil recommended 4-6gb), and iterations are taking about two hours each for most PWMs. Since I can only run around 60 jobs at once, it will take a long long time until this is done, and in the meantime I can't ql into the cluster because I'm flust against my 300 GB RAM quota. So that's that.
+Over the weekend I launched msCentipede on all 1261 human PWMs. With 5gb of RAM it's taken over 48 hours to do one model run (we're doing 10 to get a good fit; Anil recommended 4-6gb), and iterations are taking about two hours each for most PWMs. Since I can only run around 60 jobs at once, it will take a long long time until this is done, and in the meantime I can't ql into the cluster because I'm flush against my 300 GB RAM quota. So that's that.
 
 Have had a combination of 17 overflow/domain errors so far, with different flavours. I get the feeling some of these will be reproducible, probably, since it seems to be a matrix problem:
 
