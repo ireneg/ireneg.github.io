@@ -48,30 +48,33 @@ Having done that, one can grep the PWMs that have finished (`grep 'M03978\|M0689
 
 ![screen shot 2016-01-06 at 13 48 57](https://cloud.githubusercontent.com/assets/1609166/12135857/4b055cea-b47c-11e5-95ad-17afd2d86597.png)
 
-But there is obviously a link between number of PWM hits and speed, which is weird - it should only be looking at the first 10000 for learning anyhow, and that is what the log file says the program is doing, eg:
+However, there's a far more sensible one, which is the information content of the PWMs.
+
 
 ```
 pwms <- read.table("high_ic_transfac_pwms.txt")
 onion$pwm <- gsub(".human.log:iteration", "", onion$V1)
+filt.pwm <- pwms[pwms$V1 %in% onion$pwm,]
+filt.pwm <- filt.pwm[order(as.character(filt.pwm$V1)),]
+onion <- onion[order(as.character(onion$pwm)),]
+finished <- "M03978|M06899|M04499|M06164|M06745|M05968"
+
 png(file="iteration_time_vs_genomic_hits.png")
-plot(pwms[pwms$V1 %in% onion$pwm,5], as.vector(unlist(by(onion, as.factor(onion$pwm), function(x) mean(x$V16)))), col=blah, ylab="Mean iteration time (s)", xlab="PWM genomic matches", pch=16)
+plot(pwms[pwms$V1 %in% onion$pwm,5] ~ as.vector(unlist(by(onion, as.factor(onion$pwm), function(x) mean(x$V16)))), col=ifelse(grepl(finished, filt.pwm$V1), 2, 1), xlab="Mean iteration time (s)", ylab="Genomic PWM motif matches", pch=16)
+legend(x="topright", legend=c("Finished", "Running"), pch=16, col=c(2,1))
+dev.off()
+
+png(file="iteration_time_vs_ic.png")
+plot(pwms[pwms$V1 %in% onion$pwm,4] ~ as.vector(unlist(by(onion, as.factor(onion$pwm), function(x) mean(x$V16)))), col=ifelse(grepl(finished, filt.pwm$V1), 2, 1), xlab="Mean iteration time (s)", ylab="PWM information content", pch=16)
 legend(x="topright", legend=c("Finished", "Running"), pch=16, col=c(2,1))
 dev.off()
 ```
 
-![iteration_time_vs_genomic_hits](https://cloud.githubusercontent.com/assets/1609166/12135983/07fcccf6-b47e-11e5-9f3d-df78b7993471.png)
+![iteration_time_vs_genomic_hits](https://cloud.githubusercontent.com/assets/1609166/12136814/57bf0152-b486-11e5-9662-6e90fdc9680b.png)
 
+![iteration_time_vs_ic](https://cloud.githubusercontent.com/assets/1609166/12136816/590b7ff4-b486-11e5-8680-0a35dde1d9f5.png)
 
-```
-[ireneg@spudhead output]$ grep "motif sites" *
-M00193.human.log:num of motif sites = 10000
-M00233.human.log:num of motif sites = 10000
-M00398.human.log:num of motif sites = 8526
-M00439.human.log:num of motif sites = 10000
-M00984.human.log:num of motif sites = 10000
-```
-
-So, I'll be emailing people about this and seeing what's going on there... 
+So, I'll be emailing people about this and seeing where we decide to go from there. 
 
 
 
