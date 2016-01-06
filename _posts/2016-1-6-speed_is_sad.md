@@ -60,19 +60,19 @@ onion <- onion[order(as.character(onion$pwm)),]
 finished <- "M03978|M06899|M04499|M06164|M06745|M05968"
 
 png(file="iteration_time_vs_genomic_hits.png")
-plot(pwms[pwms$V1 %in% onion$pwm,5] ~ as.vector(unlist(by(onion, as.factor(onion$pwm), function(x) mean(x$V16)))), col=ifelse(grepl(finished, filt.pwm$V1), 2, 1), xlab="Mean iteration time (s)", ylab="Genomic PWM motif matches", pch=16)
+plot(filt.pwm[filt.pwm$V1 %in% onion$pwm,5] ~ as.vector(unlist(by(onion, as.factor(onion$pwm), function(x) mean(x$V16)))), col=ifelse(grepl(finished, filt.pwm$V1), 2, 1), xlab="Mean iteration time (s)", ylab="Genomic PWM motif matches", pch=16)
 legend(x="topright", legend=c("Finished", "Running"), pch=16, col=c(2,1))
 dev.off()
 
 png(file="iteration_time_vs_ic.png")
-plot(pwms[pwms$V1 %in% onion$pwm,4] ~ as.vector(unlist(by(onion, as.factor(onion$pwm), function(x) mean(x$V16)))), col=ifelse(grepl(finished, filt.pwm$V1), 2, 1), xlab="Mean iteration time (s)", ylab="PWM information content", pch=16)
+plot(filt.pwm[filt.pwm$V1 %in% onion$pwm,4] ~ as.vector(unlist(by(onion, as.factor(onion$pwm), function(x) mean(x$V16)))), col=ifelse(grepl(finished, filt.pwm$V1), 2, 1), xlab="Mean iteration time (s)", ylab="PWM information content", pch=16)
 legend(x="topright", legend=c("Finished", "Running"), pch=16, col=c(2,1))
 dev.off()
 ```
 
-![iteration_time_vs_genomic_hits](https://cloud.githubusercontent.com/assets/1609166/12136814/57bf0152-b486-11e5-9662-6e90fdc9680b.png)
+![iteration_time_vs_genomic_hits](https://cloud.githubusercontent.com/assets/1609166/12136864/cfab5116-b486-11e5-8df5-378b56c5a44d.png)
 
-![iteration_time_vs_ic](https://cloud.githubusercontent.com/assets/1609166/12136816/590b7ff4-b486-11e5-8680-0a35dde1d9f5.png)
+![iteration_time_vs_ic](https://cloud.githubusercontent.com/assets/1609166/12136865/cfd763dc-b486-11e5-9140-46fb1b9540bf.png)
 
 So, I'll be emailing people about this and seeing where we decide to go from there. 
 
