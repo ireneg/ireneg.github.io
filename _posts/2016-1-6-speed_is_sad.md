@@ -72,6 +72,8 @@ dev.off()
 
 ![iteration_time_vs_genomic_hits](https://cloud.githubusercontent.com/assets/1609166/12136864/cfab5116-b486-11e5-8df5-378b56c5a44d.png)
 
+Do note that the number of motif hits here is actually the number of hits that pass filtering according to Anil's criteria, and does not reflect the number we're testing across human and chimp (I should try to put that list together)
+
 ![iteration_time_vs_ic](https://cloud.githubusercontent.com/assets/1609166/12136865/cfd763dc-b486-11e5-9140-46fb1b9540bf.png)
 
 So, I'll be emailing people about this and seeing where we decide to go from there. 
