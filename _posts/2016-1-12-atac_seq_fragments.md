@@ -9,33 +9,35 @@ The ATAC-seq data appear to have some weird systematic biases in there that I ca
 * relationships between the covariates
 * relationships between the covariates and the actual data
 
-Fragment abundance ratios:
+Fragment abundance ratios, before and after merge. The chimp NFR is definitely messed up relative to the human one:
+![tss_after_merge_no low cell counts remove over 5_covariates_by_species_ dragged pdf](https://cloud.githubusercontent.com/assets/1609166/12260971/3934b998-b959-11e5-8220-285729fcb0ed.png)
+![tss_before_merge_no low cell counts remove over 5_covariates_by_species_ dragged pdf](https://cloud.githubusercontent.com/assets/1609166/12260978/3960dbfe-b959-11e5-94ba-64db674f26fc.png)
 
-![tss_before_merge_no low cell counts remove over 5_covariates_by_species_50 150 pdf](https://cloud.githubusercontent.com/assets/1609166/12260068/961b5b08-b954-11e5-8d13-2f89fc760be3.png)
+![tss_after_merge_no low cell counts remove over 5_covariates_by_species_ dragged _1 pdf](https://cloud.githubusercontent.com/assets/1609166/12260970/39339d60-b959-11e5-830c-838698c2deab.png)
+![tss_before_merge_no low cell counts remove over 5_covariates_by_species_ dragged _1 pdf](https://cloud.githubusercontent.com/assets/1609166/12260977/396018f4-b959-11e5-8313-1b4fae571999.png)
 
-![tss_before_merge_no low cell counts remove over 5_covariates_by_species_down pdf](https://cloud.githubusercontent.com/assets/1609166/12260070/962002ca-b954-11e5-979d-7d1d08022488.png)
+![tss_after_merge_no low cell counts remove over 5_covariates_by_species_ dragged _2 pdf](https://cloud.githubusercontent.com/assets/1609166/12260968/3932a7de-b959-11e5-847b-6debd7153d7e.png)
+![tss_before_merge_no low cell counts remove over 5_covariates_by_species_ dragged _2 pdf](https://cloud.githubusercontent.com/assets/1609166/12260974/395c07e6-b959-11e5-9e81-fe88a6f345fd.png)
 
-![tss_before_merge_no low cell counts remove over 5_covariates_by_species_mid pdf](https://cloud.githubusercontent.com/assets/1609166/12260071/9621f210-b954-11e5-81ae-ba7f70f78b05.png)
-
-![tss_before_merge_no low cell counts remove over 5_covariates_by_species_up pdf](https://cloud.githubusercontent.com/assets/1609166/12260074/9647b4dc-b954-11e5-8af8-51de9123fd04.png)
+![tss_after_merge_no low cell counts remove over 5_covariates_by_species_ dragged _3 pdf](https://cloud.githubusercontent.com/assets/1609166/12260969/39333ad2-b959-11e5-8c56-27f780b28d68.png)
+![tss_before_merge_no low cell counts remove over 5_covariates_by_species_ dragged _3 pdf](https://cloud.githubusercontent.com/assets/1609166/12260975/395c7136-b959-11e5-8f2d-3393bfba74c6.png)
 
 Reads in the TSS and BG:
+![tss_after_merge_no low cell counts remove over 5_covariates_by_species_ dragged _4 pdf](https://cloud.githubusercontent.com/assets/1609166/12260973/393781d2-b959-11e5-9635-01c91c32338f.png)
+![tss_before_merge_no low cell counts remove over 5_covariates_by_species_ dragged _4 pdf](https://cloud.githubusercontent.com/assets/1609166/12260979/3963c9cc-b959-11e5-93fb-d4b66e09a6be.png)
 
-![tss_before_merge_no low cell counts remove over 5_covariates_by_species_tss all pdf](https://cloud.githubusercontent.com/assets/1609166/12260072/96451fba-b954-11e5-947f-b30bbae7ee5f.png)
+![tss_after_merge_no low cell counts remove over 5_covariates_by_species_ dragged _5 pdf](https://cloud.githubusercontent.com/assets/1609166/12260972/39353440-b959-11e5-96be-2218178dd367.png)
+![tss_before_merge_no low cell counts remove over 5_covariates_by_species_ dragged _5 pdf](https://cloud.githubusercontent.com/assets/1609166/12260976/395fb9ea-b959-11e5-869d-d42717c91de2.png)
 
-![tss_before_merge_no low cell counts remove over 5_covariates_by_species_tss bg pdf](https://cloud.githubusercontent.com/assets/1609166/12260073/9646ae16-b954-11e5-9de0-f6f0d6674edc.png)
 
+But then, given how robust this trend is, why does species come to the forefront so much more when I sum replicates? Suggests the effect is cancelled out between replicates of the same species, but it is not. Within an individual trends are pretty consistent, suggesting it's a biological effect, but then *why does most of this effect vanish when I sum replicates????* What else is hiding in the before merge data???
 
-Why does most of this effect vanish when I sum replicates? Suggests the effect is flow-cell specific, but it is not, nothing ever clusters by flow cell or by individual. Within an individual trends are pretty consistent, suggesting it's a biological effect, but then *why does most of this effect vanish when I sum replicates????* 
-
-Covariates vs PCs, before and after merging:
+Covariates vs PCs, before and after merging - PC1 and PC2 pretty much switch places, and species is now a powerful driver:
+![tss_before_merge_no low cell counts remove over 5_cpm_covariates_vs_pcs pdf](https://cloud.githubusercontent.com/assets/1609166/12260076/964e238a-b954-11e5-9c59-90e12ac11262.png)
 
 ![tss_after_merge_no low cell counts remove over 5_cpm_covariates_vs_pcs tss all pdf](https://cloud.githubusercontent.com/assets/1609166/12260069/961df426-b954-11e5-82f9-6f84772a15d6.png)
 
-![tss_before_merge_no low cell counts remove over 5_cpm_covariates_vs_pcs pdf](https://cloud.githubusercontent.com/assets/1609166/12260076/964e238a-b954-11e5-9c59-90e12ac11262.png)
-
-Sample heatmaps with covariate values, before and after merging:
-
+Sample heatmaps with covariate values, before and after merging. Down is clearly driving the heatmap clustering before, but not after. Why????:
 ![tss_before_merge_no low cell counts remove over 5_cpm_correlation_heatmaps_tss_all pdf](https://cloud.githubusercontent.com/assets/1609166/12260075/964b01a0-b954-11e5-8420-0f9e293a4e6c.png)
 
 ![tss_after_merge_no low cell counts remove over 5_cpm_correlation_heatmaps_tss_spearman pdf](https://cloud.githubusercontent.com/assets/1609166/12260067/961a6464-b954-11e5-8721-b721e3241a8a.png)
@@ -50,5 +52,11 @@ To fix the problem, the line becomes:
 merged.fragments <- ddply(fragments, .(rev(sample.names.ind)), function(x) colMeans(x[,c(1:5)]))
 ```
 
-There's a co
 
+
+
+Bonus: commands to batch rename and batch convert images from pdfs dragged out of preview:
+
+```
+for i in *; do mv "$i" "`echo $i | tr ' ' '_'`"; sips -s format png $i --out $i.png; done
+```
