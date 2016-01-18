@@ -43,4 +43,4 @@ M03935.H.final.filter.bed.gz
 13459
 ```
 
-If I get bored I might try running 1 PWM against each bamfile independently to see if there are some that are way noisier than others, but given how this happens to both the humans and the chimps, I'm not sure what I'll learn. 
+If I get bored I might try running 1 PWM against each bamfile independently to see if there are some that are way noisier than others, but given how this happens to both the humans and the chimps, I'm not sure what I'll learn. For now I am trying with 50bp instead. 
