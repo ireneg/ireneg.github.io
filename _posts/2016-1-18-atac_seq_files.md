@@ -17,11 +17,11 @@ Right now, files/runs being discarded are:
 
 * C3649 FC2 - pca outlier, over fragmented? (done)
 * C3651 FC1 - pca, correlation outlier (low depth) (done)
-* C40210 FC1 - pca, correlation outlier
+* C40210 FC1 - pca, correlation outlier (done)
 
-* H19114 FC4 - pca, correlation outlier (strange flow cell)
-* H19101 FC1 - pca, correlation outlier (very low depth)
-* H20961 FC1 - pca, correlation outlier (very low depth)
+* H19114 FC4 - pca, correlation outlier (strange flow cell) (done)
+* H19101 FC1 - pca, correlation outlier (very low depth) (done)
+* H20961 FC1 - pca, correlation outlier (very low depth) (done)
 * H18489 FC1 and FC2 - grossly over fragmented 
 
 The command line for cleaning up was variations of
@@ -31,9 +31,15 @@ The command line for cleaning up was variations of
 `~/atac_seq/mapped/atac_seq/filtered/read.group.filter.test` simply looks like:
 
 ```
-[ireneg@spudling23 filtered]$ more read.group.filter.test 
-FC2.LIB2
-FC5.LIB2
+[ireneg@spudling23 mapped_filtered]$ more  ~/atac_seq/mapped/atac_seq/filtered/read.group.filter.test 
 FC2.LIB1
 FC5.LIB1
+FC2.LIB2
+FC5.LIB2
+```
+
+Also this one liner has been very helpful in checking how things are running and the such as I try to filter the files. 
+
+``` 
+for i in {1..5}; do motif=`head logs/$i.scan_all.log -n 1 | sed 's/This job has the task ID [0-9]*, and corresponds to //g'` ; ls -lh $motif*final*  ; done
 ```
