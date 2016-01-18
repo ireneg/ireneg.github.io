@@ -15,12 +15,25 @@ I also revisited my lab meeting slides once more and realised that C3647 FC1 sho
 
 Right now, files/runs being discarded are:
 
-* C3649 FC2 - pca outlier, over fragmented?
-* C3651 FC1 - pca, correlation outlier (low depth)
+* C3649 FC2 - pca outlier, over fragmented? (done)
+* C3651 FC1 - pca, correlation outlier (low depth) (done)
 * C40210 FC1 - pca, correlation outlier
 
-* H19114 FC1 - pca, correlation outlier (very low depth)
+* H19114 FC4 - pca, correlation outlier (strange flow cell)
 * H19101 FC1 - pca, correlation outlier (very low depth)
 * H20961 FC1 - pca, correlation outlier (very low depth)
-* H18489 FC1 and FC2 - grossly over fragmented
+* H18489 FC1 and FC2 - grossly over fragmented 
 
+The command line for cleaning up was variations of
+
+`samtools view -b -R ~/atac_seq/mapped/atac_seq/filtered/read.group.filter.test C3651.merged.nochrM.rmdup.filter.bam > C3651.merged.nochrM.rmdup.filter.cleanRG.bam`
+
+`~/atac_seq/mapped/atac_seq/filtered/read.group.filter.test` simply looks like:
+
+```
+[ireneg@spudling23 filtered]$ more read.group.filter.test 
+FC2.LIB2
+FC5.LIB2
+FC2.LIB1
+FC5.LIB1
+```
