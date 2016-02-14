@@ -4,7 +4,7 @@ layout: post
 tags: [mscentipede, atac-seq]
 ---
 
-The speed improvements are making quite a big difference to run times - compare this with the old histogram data from ()[] (this was generated in exactly the same way). I've been doing some on-going QC on the jobs, to be sure nodes don't get held hostage running pointless calculations:
+The speed improvements are making quite a big difference to run times - compare this with the old histogram data from [this old post](http://ireneg.github.io/speed_is_sad/) (this was generated in exactly the same way). I've been doing some on-going QC on the jobs, to be sure nodes don't get held hostage running pointless calculations:
 
 ```
 setwd("~/Desktop/cluster_sync/")
