@@ -38,7 +38,7 @@ summary(onion.short$V16)
 These are the 11 PWMs that have taken more than 5000 seconds per iteration at least once. It's hard to decide what to do with the borderline cases, but jobs 605 and 520 were not difficult decisions:
 
 PWM | job id | status
-----------------------
+----|--------|--------
 M01670.chimp.log | 605 | current model taking 48000 seconds/iteration *KILLED* 
 M01780.human.log | 608 | single iteration over 5000 seconeds, usually at 4500
 M02288.human.log | 478 | 79 iterations at ~5000 seconds for first model fitting, no sign of convergence 
@@ -56,7 +56,7 @@ Also checked all jobs with more than 100 iterations. Job 9 was also not a diffic
 `grep "iteration 100" *.log`
 
 PWM | job id | status
-----------------------
+----|--------|--------
 M01195.human.log | 647 | took 964 iterations at around 220 seconds, but finished, and model is now fitted
 M01282.human.log | 467 | finished model after 130 iterations
 M01351.human.log | 631 | 110 iterations at 2500 seconds each for first model fitting, no sign of converging
