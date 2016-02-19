@@ -54,7 +54,7 @@ baseurl: ""
 #
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 permalink: /:title/
 redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "strikethrough", "autolink", "tables", "with_toc_data"]
